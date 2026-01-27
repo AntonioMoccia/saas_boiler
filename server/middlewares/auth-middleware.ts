@@ -2,14 +2,15 @@ import { auth } from "@/lib/auth";
 
 export const authMiddleware = async (c: any, next: any) => {
   const session = await auth.api.getSession({ headers: c.req.raw.headers });
+  console.log("Session auth mid", session);
   if (!session) {
     c.set("user", null);
     c.set("session", null);
     c.json({
-        error: "Unauthorized",
-    })
-    await next();
-    return;
+      error: "Unauthorized",
+    });
+    c.status(401);
+    return c.json({ error: "Unauthorized" });
   }
   c.set("user", session.user);
   c.set("session", session.session);
