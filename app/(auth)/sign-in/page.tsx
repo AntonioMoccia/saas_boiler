@@ -1,4 +1,4 @@
-import SignInForm from '@/components/sign-in-form'
+import SignInForm from '@/features/auth/components/sign-in-form'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 

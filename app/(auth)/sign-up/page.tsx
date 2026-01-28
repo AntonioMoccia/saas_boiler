@@ -1,4 +1,4 @@
-import SignUpForm from '@/components/sign-up-form'
+import SignUpForm from '@/features/auth/components/sign-up-form'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 function SignUpPage() {

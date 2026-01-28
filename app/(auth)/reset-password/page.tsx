@@ -1,6 +1,6 @@
 "use client"
 
-import ResetPasswordForm from '@/components/reset-password-form'
+import ResetPasswordForm from '@/features/auth/components/reset-password-form'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { redirect, useParams, useSearchParams } from 'next/navigation'
 import React from 'react'
