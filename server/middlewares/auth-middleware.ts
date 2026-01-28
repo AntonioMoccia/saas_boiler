@@ -1,7 +1,7 @@
-import { auth } from "@/lib/auth";
+import { authServer } from "@/lib/auth-server";
 
 export const authMiddleware = async (c: any, next: any) => {
-  const session = await auth.api.getSession({ headers: c.req.raw.headers });
+  const session = await authServer.api.getSession({ headers: c.req.raw.headers });
   console.log("Session auth mid", session);
   if (!session) {
     c.set("user", null);

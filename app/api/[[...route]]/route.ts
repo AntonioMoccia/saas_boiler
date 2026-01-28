@@ -1,4 +1,4 @@
-import { app } from "@/server/hono";
+import app from "@/server/hono";
 import { handle } from "hono/vercel";
 
 

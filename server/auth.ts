@@ -1,11 +1,11 @@
 import {Hono} from 'hono'
-import {auth} from '@/lib/auth'
+import {authServer} from '@/lib/auth-server'
 import { cors } from "hono/cors";
 
 export const authRoute = new Hono()
 
 authRoute.use(
-	"/api/auth/*", // or replace with "*" to enable cors for all routes
+	"/*", // or replace with "*" to enable cors for all routes
 	cors({
 		origin: "http://localhost:3000", // replace with your origin
 		allowHeaders: ["Content-Type", "Authorization"],
@@ -16,6 +16,6 @@ authRoute.use(
 	}),
 );
 
-authRoute.on(["POST", "GET"], "/api/auth/*", (c) => {
-	return auth.handler(c.req.raw);
+authRoute.on(["POST", "GET"], "/*", (c) => {
+	return authServer.handler(c.req.raw);
 });

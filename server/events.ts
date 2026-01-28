@@ -1,10 +1,8 @@
 import { Hono } from "hono";
-import { authMiddleware } from "./middlewares/auth-middleware";
+import { authMiddleware } from "@/server/middlewares/auth-middleware";
 
+export const events = new Hono();
 
-export const events = new Hono().basePath("/events").use("*", authMiddleware);
-
- 
-events.get("/", (c) => {
+events.get("/", authMiddleware, (c) => {
   return c.json({ message: "Welcome to the Events API!" });
 });
