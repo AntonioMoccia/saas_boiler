@@ -34,3 +34,38 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Testing
+
+This project uses Jest + ts-jest for unit tests.
+
+- Run tests:
+
+```bash
+npm install
+npm run test
+```
+
+- Run tests in watch mode:
+
+```bash
+npm run test:watch
+```
+
+Notes:
+- Tests are located in the `tests/` folder.
+- Imports using the `@/` alias are mapped in `jest.config.ts`.
+
+Suggestions:
+- Keep secrets like `RESEND_API_KEY` out of tests — mock network calls when needed.
+- Add more unit tests for critical logic in `lib/` and for UI components using `@testing-library/react`.
+
+## Documentation
+
+Ho aggiunto una documentazione più completa sotto la cartella `docs/`:
+
+- `docs/SETUP.md`: guida di setup e comandi di sviluppo.
+- `docs/ENV.md`: descrizione delle variabili d'ambiente.
+- `docs/MIGRATIONS.md`: comandi e suggerimenti per le migrazioni Prisma.
+
+Trovi anche un file di esempio `.env.example` nella root del repository; copialo in `.env` e aggiorna i valori prima di avviare l'app.
